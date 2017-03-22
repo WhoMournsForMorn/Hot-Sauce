@@ -4,40 +4,47 @@ import './AddIngredient.css';
 class AddIngredient extends Component {
 	constructor(props) {
 		super(props);
-		this.state = { ingredientName: '',
-					   ingreditnetQuantity: '' };
-		this.handleNameUpdate = this.handleNameUpdate.bind(this);
-		this.handleQuantityUpdate = this.handleQuantityUpdate.bind(this);
+		this.state = { name: '', measurement: '' };
+		// this.handleNameUpdate = this.handleNameUpdate.bind(this);
+		// this.handleMeasurementUpdate = this.handleMeasurementUpdate.bind(this);
 		this.addIngredient = this.addIngredient.bind(this);
 	}
 
 	addIngredient() {
-		this.props.addIngredient(this.state.ingredientName, this.state.ingredientQuantity);
-		this.setState({ ingredientName: '', ingredientQuantity: '' });
+		this.props.addIngredient({name: this.state.name, measurement: this.state.measurement});
+		this.setState({  name: '', measurement: ''});
 	}
 
-	handleNameUpdate(event) {
-		this.setState({ ingredientName: event.target.value });
+	handleChange(name, event) {
+		let change = {};
+		change[name] = event.target.value;
+		this.setState(change);
 	}
 
-	handleQuantityUpdate(event) {
-		this.setState({ ingredientQuantity: event.target.value });
-	}
+	// handleNameUpdate(event) {
+	// 	this.setState({name: event.target.value });
+	// }
+
+	// handleMeasurementUpdate(event) {
+	// 	this.setState({ measurement: event.target.value });
+	// }
 
 	render() {
 		return(
 			<div className="AddIngredient">
 				<input
 					type="text"
-					onChange={this.handleNameUpdate}
+					// onChange={this.handleNameUpdate}
+					onChange={this.handleChange.bind(this, 'name')}
 					placeholder="Ingredient"
-					value={this.state.ingredientName}
+					value={this.state.name}
 				/>
 				<input
 					type="text"
-					onChange={this.handleQuantityUpdate}
+					// onChange={this.handleMeasurementUpdate}
+					onChange={this.handleChange.bind(this, 'measurement')}
 					placeholder="Measurement"
-					value={this.state.ingredientQuantity}
+					value={this.state.measurement}
 				/>
 				&nbsp;&nbsp;
 				<button onClick={this.addIngredient}>Add</button>
@@ -45,3 +52,4 @@ class AddIngredient extends Component {
 		)
 	}
 }
+export default AddIngredient;

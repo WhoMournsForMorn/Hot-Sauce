@@ -15,7 +15,7 @@ class Ingredient extends Component {
 	render() {
 		return (
 			<div className="Ingredient" strikeThrough={this.state.stricken} >
-				{this.props.quantity} <strong>{this.props.name}</strong>
+				{this.props.name} <strong>{this.props.measurement}</strong>
 			</div>
 		);
 	}
