@@ -4,15 +4,16 @@ import './AddIngredient.css';
 class AddIngredient extends Component {
 	constructor(props) {
 		super(props);
-		this.state = { name: '', measurement: '' };
+		this.state = { name: '', measurement: '', id: '', recipeID: '' };
 		// this.handleNameUpdate = this.handleNameUpdate.bind(this);
 		// this.handleMeasurementUpdate = this.handleMeasurementUpdate.bind(this);
 		this.addIngredient = this.addIngredient.bind(this);
 	}
 
 	addIngredient() {
-		this.props.addIngredient({name: this.state.name, measurement: this.state.measurement});
-		this.setState({  name: '', measurement: ''});
+		const uuidV4 = require('uuid/v4');
+		this.props.addIngredient({name: this.state.name, measurement: this.state.measurement, id: uuidV4(), recipeID:this.props.recipeID });
+		this.setState({  name: '', measurement: '', id: '', recipeID: ''});
 	}
 
 	handleChange(name, event) {

@@ -1,5 +1,5 @@
 import React from 'react';
-import IngredientList from './IngredientList';
+import RecipeList from './RecipeList';
 
 // class App extends Component {
 //   render() {
@@ -19,7 +19,7 @@ import IngredientList from './IngredientList';
 
 const App = () => {
   return (<div className="App">
-      <IngredientList/>
+      <RecipeList/>
     </div>);
 };
 
