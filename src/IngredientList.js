@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import AddIngredient from './AddIngredient'
 import Ingredient from './Ingredient'
+import { ListGroup } from 'react-bootstrap';
 
 class IngredientList extends Component {
 	constructor(props) {
@@ -35,7 +36,9 @@ class IngredientList extends Component {
 	render() {
 		return (
 			<div className="IngredientList">
-				{this.renderIngedients()}
+				<ListGroup>
+					{this.renderIngedients()}
+				</ListGroup>
 				<AddIngredient addIngredient={this.addIngredient} />
 			</div>
 		);

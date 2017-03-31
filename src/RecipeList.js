@@ -1,12 +1,14 @@
 import React, {Component} from 'react';
 import AddRecipe from './AddRecipe';
 import Recipe from './Recipe';
+import { ListGroup } from 'react-bootstrap';
 
 class RecipeList extends Component {
 	constructor(props) {
 		super(props);
-		this.state = { recipes: [{ id: 123, name: 'Jalapeno Sauce'}] };
+		this.state = { recipes: [] };
 		this.addRecipe = this.addRecipe.bind(this);
+		this.removeRecipe = this.removeRecipe.bind(this);
 	}
 
 	addRecipe(newRecipe) {
@@ -33,7 +35,9 @@ class RecipeList extends Component {
 	render() {
 		return(
 			<div className="RecipeList">
-				{this.renderRecipes()}
+				<ListGroup>
+					{this.renderRecipes()}
+				</ListGroup>
 				<AddRecipe addRecipe={this.addRecipe} />
 			</div>)
 	}

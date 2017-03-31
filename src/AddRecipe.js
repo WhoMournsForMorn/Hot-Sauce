@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './AddRecipe.css';
+import { Button } from 'react-bootstrap';
 
 class AddRecipe extends Component {
 	constructor(props) {
@@ -29,7 +30,8 @@ class AddRecipe extends Component {
 					value={this.state.name}
 				/>
 				&nbsp;&nbsp;
-				<button onClick={this.addRecipe}>Add</button>
+
+				<Button bsStyle="primary" onClick={this.addRecipe}>Add</Button>
 			</div>
 		)
 	}

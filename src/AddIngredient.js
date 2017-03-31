@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './AddIngredient.css';
+import { Button } from 'react-bootstrap';
 
 class AddIngredient extends Component {
 	constructor(props) {
@@ -10,7 +11,11 @@ class AddIngredient extends Component {
 		this.addIngredient = this.addIngredient.bind(this);
 	}
 
-	addIngredient() {
+	addIngredient(event) {
+		event.preventDefault();
+		if(this.state.name === '' || this.state.measurement === ''){
+			return;
+		}
 		const uuidV4 = require('uuid/v4');
 		this.props.addIngredient({name: this.state.name, measurement: this.state.measurement, id: uuidV4(), recipeID:this.props.recipeID });
 		this.setState({  name: '', measurement: '', id: '', recipeID: ''});
@@ -48,7 +53,7 @@ class AddIngredient extends Component {
 					value={this.state.measurement}
 				/>
 				&nbsp;&nbsp;
-				<button onClick={this.addIngredient}>Add</button>
+				<Button bsStyle="primary" onClick={this.addIngredient} >Add</Button>
 			</div>
 		)
 	}

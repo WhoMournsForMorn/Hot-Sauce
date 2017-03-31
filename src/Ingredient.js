@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import './Ingredient.css';
+import { Button } from 'react-bootstrap';
 
 class Ingredient extends Component {
 	constructor(props) {
@@ -19,10 +20,10 @@ class Ingredient extends Component {
 
 	render() {
 		return (
-				<div className="Ingredient" >
+				<div className="list-group-item" >
 					<span className={this.state.strikeThrough} onClick={this.strikeThrough} >{this.props.name} <strong>{this.props.measurement}</strong></span>
 					&nbsp;
-					<button onClick={this.removeIngredient}>Remove</button>
+					<Button bsSize="xsmall" onClick={this.removeIngredient}>Remove</Button>
 				</div>
 		);
 	}
