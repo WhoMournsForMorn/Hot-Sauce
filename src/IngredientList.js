@@ -3,6 +3,7 @@ import AddIngredient from './AddIngredient'
 import Ingredient from './Ingredient'
 import { ListGroup } from 'react-bootstrap';
 
+
 class IngredientList extends Component {
 	constructor(props) {
 		super(props);

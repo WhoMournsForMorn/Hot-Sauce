@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import './AddRecipe.css';
 import { Button } from 'react-bootstrap';
 
 class AddRecipe extends Component {

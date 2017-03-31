@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import IngredientList from './IngredientList';
-import './Recipe.css';
 import { Button } from 'react-bootstrap';
 
 class Recipe extends Component {

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import './AddIngredient.css';
 import { Button } from 'react-bootstrap';
+import './AddIngredient.css';
 
 class AddIngredient extends Component {
 	constructor(props) {
